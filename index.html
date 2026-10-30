@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Receipt — What did your week really cost?</title>
+  <meta name="description" content="A satirical web experience that prints the hidden environmental cost of your weekly consumption. Built for UN SDG 12." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__logo">RECEIPT<span class="dot">.</span></div>
+    <div class="nav__links">
+      <a href="#how">How</a>
+      <a href="#form">Audit</a>
+      <a href="#pledge">Pledge</a>
+      <a href="#hall">Hall</a>
+      <a href="#myth">Myths</a>
+      <a href="#faq">FAQ</a>
+      <a href="#form" class="nav__cta">Print mine</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="hero__tag">UN SDG 12 · RESPONSIBLE CONSUMPTION</p>
+      <h1 class="hero__title">
+        What did your <span class="hl">week</span><br />really cost?
+      </h1>
+      <p class="hero__sub">
+        You know the price in rupees. You don't know the price in water, carbon,
+        and waste. We print the receipt your planet already paid.
+      </p>
+      <a href="#form" class="btn-primary">
+        Print my receipt
+        <span class="btn-arrow">→</span>
+      </a>
+      <div class="hero__meta">
+        <div><strong>7</strong><span>questions</span></div>
+        <div><strong>30s</strong><span>to finish</span></div>
+        <div><strong>100%</strong><span>sourced data</span></div>
+      </div>
+    </div>
+    <div class="hero__scroll">scroll ↓</div>
+  </header>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>2,700 L WATER PER T-SHIRT ✦</span>
+      <span>27 KG CO₂ PER KG BEEF ✦</span>
+      <span>450 YEARS TO DECOMPOSE A BOTTLE ✦</span>
+      <span>1.17 KG WASTE PER ONLINE ORDER ✦</span>
+      <span>36 G CO₂ PER STREAMING HOUR ✦</span>
+      <span>250 KG CO₂ PER SHORT FLIGHT ✦</span>
+      <span>2,700 L WATER PER T-SHIRT ✦</span>
+      <span>27 KG CO₂ PER KG BEEF ✦</span>
+      <span>450 YEARS TO DECOMPOSE A BOTTLE ✦</span>
+      <span>1.17 KG WASTE PER ONLINE ORDER ✦</span>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <p class="eyebrow">01 · THE METHOD</p>
+    <h2 class="section-title">How it works</h2>
+    <div class="how__grid">
+      <div class="how__step">
+        <div class="how__num">01</div>
+        <h3>Tell us your week</h3>
+        <p>Seven quick questions about what you bought, ate, and used.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">02</div>
+        <h3>We do the math</h3>
+        <p>Every answer is multiplied by verified data from the UN, WWF, and FAO.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">03</div>
+        <h3>Read the damage</h3>
+        <p>A long receipt scrolls out with your water, carbon, and waste total.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">04</div>
+        <h3>Return items</h3>
+        <p>One-click swaps to shrink next week's receipt. Small, specific, doable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="form">
+    <div class="form-wrap">
+      <p class="eyebrow">02 · THE AUDIT</p>
+      <h2 class="section-title">Your week</h2>
+      <p class="form-note">Be honest. The receipt doesn't judge. It just prints.</p>
+
+      <form id="receiptForm" class="form">
+        <div class="field">
+          <label for="q_clothes">New clothing items bought <span class="qsub">(fast fashion, Shein, Zara, etc.)</span></label>
+          <div class="slider-row">
+            <input type="range" id="q_clothes" min="0" max="20" value="2" />
+            <output for="q_clothes" id="o_clothes">2</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q_meat">Meat-based meals eaten</label>
+          <div class="slider-row">
+            <input type="range" id="q_meat" min="0" max="21" value="7" />
+            <output for="q_meat" id="o_meat">7</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q_bottles">Single-use plastic bottles used</label>
+          <div class="slider-row">
+            <input type="range" id="q_bottles" min="0" max="30" value="5" />
+            <output for="q_bottles" id="o_bottles">5</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q_orders">Online orders delivered <span class="qsub">(Amazon, Flipkart, Myntra)</span></label>
+          <div class="slider-row">
+            <input type="range" id="q_orders" min="0" max="15" value="3" />
+            <output for="q_orders" id="o_orders">3</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q_streaming">Hours of HD streaming</label>
+          <div class="slider-row">
+            <input type="range" id="q_streaming" min="0" max="60" value="15" />
+            <output for="q_streaming" id="o_streaming">15</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q_flights">Short domestic flights taken</label>
+          <div class="slider-row">
+            <input type="range" id="q_flights" min="0" max="4" value="0" />
+            <output for="q_flights" id="o_flights">0</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="q_food">Meals thrown out uneaten</label>
+          <div class="slider-row">
+            <input type="range" id="q_food" min="0" max="21" value="3" />
+            <output for="q_food" id="o_food">3</output>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-print">
+          Print my receipt
+          <span class="btn-arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- RECEIPT OUTPUT -->
+  <section class="receipt-section" id="receipt-section" hidden>
+    <p class="eyebrow">03 · YOUR DAMAGE</p>
+    <div class="receipt" id="receipt">
+      <div class="receipt__header">
+        <div class="receipt__brand">RECEIPT CO.</div>
+        <div class="receipt__addr">Planet Earth · Est. 4.5B yrs</div>
+        <div class="receipt__addr">Reg: SDG-12 · Responsible Consumption</div>
+        <div class="receipt__sep">================================</div>
+        <div class="receipt__meta" id="receipt_meta">ORDER #000000 · 00/00/0000 00:00</div>
+        <div class="receipt__sep">================================</div>
+      </div>
+
+      <div class="receipt__items" id="receipt_items"></div>
+      <div class="receipt__totals" id="receipt_totals"></div>
+
+      <div class="receipt__final">
+        <div class="receipt__sep">================================</div>
+        <div class="receipt__damage">
+          <span>TOTAL DAMAGE</span>
+          <span id="receipt_damage_value">—</span>
+        </div>
+        <div class="receipt__sep">================================</div>
+        <div class="receipt__thanks">
+          THANK YOU FOR SHOPPING<br />
+          ON EARTH.<br /><br />
+          PLEASE COME AGAIN<br />
+          (OR DON'T.)
+        </div>
+        <div class="receipt__barcode" aria-hidden="true"></div>
+        <div class="receipt__code" id="receipt_code">* * * 000000 * * *</div>
+      </div>
+    </div>
+
+    <!-- REPORT CARD -->
+    <div class="report-card">
+      <div class="report-card__inner">
+        <p class="eyebrow">YOUR REPORT CARD</p>
+        <div class="report-card__row">
+          <div class="report-card__grade" id="reportGrade">—</div>
+          <div class="report-card__body">
+            <h3 id="reportTitle">Awaiting audit</h3>
+            <p id="reportMsg">Submit the audit above to receive your grade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARE BAR -->
+    <div class="compare">
+      <p class="eyebrow">YOU VS THE WORLD</p>
+      <h3 class="compare__title">How your week measures up</h3>
+      <div class="compare__rows" id="compareRows">
+        <div class="compare__row">
+          <div class="compare__label">YOU</div>
+          <div class="compare__bar"><div class="compare__fill compare__fill--you" id="barYou"></div></div>
+          <div class="compare__val" id="valYou">—</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">India average</div>
+          <div class="compare__bar"><div class="compare__fill" style="width:45%"></div></div>
+          <div class="compare__val">52 pts</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Global average</div>
+          <div class="compare__bar"><div class="compare__fill" style="width:68%"></div></div>
+          <div class="compare__val">78 pts</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Low-impact goal</div>
+          <div class="compare__bar"><div class="compare__fill compare__fill--good" style="width:18%"></div></div>
+          <div class="compare__val">21 pts</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETURN ITEMS -->
+    <div class="return">
+      <p class="eyebrow">04 · RETURN ITEMS</p>
+      <h2 class="section-title">Return items?</h2>
+      <p class="return__note">One click swaps for next week. Small, specific, doable.</p>
+      <div class="return__grid" id="returnGrid"></div>
+      <button class="btn-ghost" id="resetBtn">Print another week</button>
+    </div>
+  </section>
+
+  <!-- WEEKLY PLEDGE -->
+  <section class="pledge" id="pledge">
+    <div class="pledge__inner">
+      <p class="eyebrow">05 · THE PLEDGE</p>
+      <h2 class="section-title">Pick one thing. For one week.</h2>
+      <p class="pledge__note">Behavior change is not a lecture. It's a choice you make in 10 seconds.</p>
+
+      <div class="pledge__grid" id="pledgeGrid">
+        <button class="pledge__card" data-pledge="bottle">
+          <div class="pledge__emoji">🚰</div>
+          <h4>Carry a reusable bottle</h4>
+          <p>Skip 7 plastic bottles this week.</p>
+          <span class="pledge__pick">Pick this</span>
+        </button>
+        <button class="pledge__card" data-pledge="meatless">
+          <div class="pledge__emoji">🥗</div>
+          <h4>One meatless day</h4>
+          <p>Save ~27 kg CO₂ in a week.</p>
+          <span class="pledge__pick">Pick this</span>
+        </button>
+        <button class="pledge__card" data-pledge="secondhand">
+          <div class="pledge__emoji">👕</div>
+          <h4>Buy nothing new</h4>
+          <p>No new clothes for 7 days.</p>
+          <span class="pledge__pick">Pick this</span>
+        </button>
+        <button class="pledge__card" data-pledge="batch">
+          <div class="pledge__emoji">📦</div>
+          <h4>Batch my orders</h4>
+          <p>One delivery day. One box.</p>
+          <span class="pledge__pick">Pick this</span>
+        </button>
+        <button class="pledge__card" data-pledge="repair">
+          <div class="pledge__emoji">🔧</div>
+          <h4>Repair one thing</h4>
+          <p>Fix instead of replace.</p>
+          <span class="pledge__pick">Pick this</span>
+        </button>
+        <button class="pledge__card" data-pledge="meal">
+          <div class="pledge__emoji">🥘</div>
+          <h4>Finish every plate</h4>
+          <p>Zero food in the bin.</p>
+          <span class="pledge__pick">Pick this</span>
+        </button>
+      </div>
+
+      <div class="pledge__confirm" id="pledgeConfirm" hidden>
+        <div class="pledge__confirm-inner">
+          <p class="pledge__confirm-title">You pledged:</p>
+          <h3 id="pledgeText">—</h3>
+          <p class="pledge__count"><span id="pledgeCount">0</span> people took this pledge today</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITY MULTIPLIER -->
+  <section class="multiplier">
+    <div class="multiplier__inner">
+      <p class="eyebrow">06 · THE MULTIPLIER</p>
+      <h2 class="section-title">You × a city</h2>
+      <p class="multiplier__note">One person feels small. One city does not.</p>
+
+      <div class="multiplier__picker">
+        <label for="citySelect">If everyone in</label>
+        <select id="citySelect">
+          <option value="500000">Panaji (5 lakh)</option>
+          <option value="2000000">Bhubaneswar (20 lakh)</option>
+          <option value="7000000">Hyderabad (70 lakh)</option>
+          <option value="12000000">Mumbai (1.2 cr)</option>
+          <option value="20000000">Delhi (2 cr)</option>
+        </select>
+        <label>did one</label>
+        <select id="actionSelect">
+          <option value="bottle">plastic bottle skip</option>
+          <option value="meatless">meatless day</option>
+          <option value="shirt">fast-fashion skip</option>
+          <option value="order">online order skip</option>
+        </select>
+        <label>per week...</label>
+      </div>
+
+      <div class="multiplier__stats">
+        <div class="multiplier__stat">
+          <span class="mstat__num" id="mWater">—</span>
+          <span class="mstat__unit">L water saved / year</span>
+        </div>
+        <div class="multiplier__stat">
+          <span class="mstat__num" id="mCo2">—</span>
+          <span class="mstat__unit">kg CO₂ cut / year</span>
+        </div>
+        <div class="multiplier__stat">
+          <span class="mstat__num" id="mEquiv">—</span>
+          <span class="mstat__unit" id="mEquivUnit">equivalent</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HALL OF RECEIPTS -->
+  <section class="hall" id="hall">
+    <p class="eyebrow">07 · THE GALLERY</p>
+    <h2 class="section-title">Hall of receipts</h2>
+    <p class="hall__note">Three anonymous weeks. Which one is yours?</p>
+
+    <div class="hall__grid">
+      <article class="hall__card">
+        <div class="hall__tag hall__tag--light">LIGHT WEEK</div>
+        <div class="hall__receipt">
+          <div class="hall__rbrand">RECEIPT CO.</div>
+          <div class="hall__rline"><span>2× Secondhand buy</span><span>low</span></div>
+          <div class="hall__rline"><span>3× Veg meals/day</span><span>low</span></div>
+          <div class="hall__rline"><span>0× Plastic bottles</span><span>—</span></div>
+          <div class="hall__rline"><span>1× Online order</span><span>1.2 kg</span></div>
+          <div class="hall__rsep">————————————————</div>
+          <div class="hall__rdmg"><span>DAMAGE</span><span>18 pts</span></div>
+        </div>
+        <p class="hall__quote">"I didn't do anything heroic. I just paused before buying."</p>
+      </article>
+
+      <article class="hall__card">
+        <div class="hall__tag hall__tag--mid">AVERAGE WEEK</div>
+        <div class="hall__receipt">
+          <div class="hall__rbrand">RECEIPT CO.</div>
+          <div class="hall__rline"><span>3× Fast fashion</span><span>8,100 L</span></div>
+          <div class="hall__rline"><span>8× Meat meals</span><span>31 kg CO₂</span></div>
+          <div class="hall__rline"><span>6× Plastic bottles</span><span>0.5 kg CO₂</span></div>
+          <div class="hall__rline"><span>4× Online orders</span><span>4.7 kg</span></div>
+          <div class="hall__rsep">————————————————</div>
+          <div class="hall__rdmg"><span>DAMAGE</span><span>62 pts</span></div>
+        </div>
+        <p class="hall__quote">"I thought I was being normal. Turns out normal has a cost."</p>
+      </article>
+
+      <article class="hall__card">
+        <div class="hall__tag hall__tag--heavy">HEAVY WEEK</div>
+        <div class="hall__receipt">
+          <div class="hall__rbrand">RECEIPT CO.</div>
+          <div class="hall__rline"><span>12× Fast fashion</span><span>32,400 L</span></div>
+          <div class="hall__rline"><span>14× Meat meals</span><span>55 kg CO₂</span></div>
+          <div class="hall__rline"><span>18× Plastic bottles</span><span>1.5 kg CO₂</span></div>
+          <div class="hall__rline"><span>9× Online orders</span><span>10.5 kg</span></div>
+          <div class="hall__rline"><span>1× Short flight</span><span>250 kg CO₂</span></div>
+          <div class="hall__rsep">————————————————</div>
+          <div class="hall__rdmg"><span>DAMAGE</span><span>412 pts</span></div>
+        </div>
+        <p class="hall__quote">"The receipt felt like a mirror. I didn't love what I saw."</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- MYTH VS FACT -->
+  <section class="myth" id="myth">
+    <p class="eyebrow">08 · MYTH VS FACT</p>
+    <h2 class="section-title">What you've been told. What is true.</h2>
+    <p class="myth__note">Tap a card to flip. Six quick ones.</p>
+
+    <div class="myth__grid" id="mythGrid">
+      <!-- JS fills this -->
+    </div>
+  </section>
+
+  <!-- DID YOU KNOW CAROUSEL -->
+  <section class="facts">
+    <div class="facts__inner">
+      <p class="eyebrow">09 · DID YOU KNOW</p>
+      <div class="facts__stage">
+        <blockquote class="facts__quote" id="factQuote">
+          Loading the first fact...
+        </blockquote>
+        <cite class="facts__cite" id="factCite">—</cite>
+      </div>
+      <div class="facts__nav">
+        <button class="facts__btn" id="factPrev" aria-label="Previous fact">←</button>
+        <span class="facts__dots" id="factDots"></span>
+        <button class="facts__btn" id="factNext" aria-label="Next fact">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="sources" id="sources">
+    <p class="eyebrow">10 · PROOF</p>
+    <h2 class="section-title">Every number has a source</h2>
+    <p class="sources__intro">We invented nothing. Averages, rounded for readability.</p>
+    <ul class="sources__list">
+      <li><strong>1 cotton t-shirt → 2,700 L water</strong> — WWF Cotton Farming &amp; Water Report</li>
+      <li><strong>1 kg beef → 15,415 L water, 27 kg CO₂e</strong> — FAO Water Footprint Network</li>
+      <li><strong>1 plastic bottle → 82 g CO₂, 450 yr decomposition</strong> — UN Environment Programme</li>
+      <li><strong>1 online order → 1.17 kg packaging waste</strong> — UNEP Packaging Report</li>
+      <li><strong>1 hr HD streaming → 36 g CO₂</strong> — IEA Digital Energy Report</li>
+      <li><strong>1 short-haul flight → 250 kg CO₂ per passenger</strong> — ICAO Carbon Calculator</li>
+      <li><strong>1 wasted meal → ~0.5 kg CO₂ + 300 L water</strong> — FAO Food Wastage Footprint</li>
+    </ul>
+  </section>
+
+  <!-- IMPACT TIMELINE -->
+  <section class="timeline">
+    <div class="timeline__inner">
+      <p class="eyebrow">11 · THE TIMELINE</p>
+      <h2 class="section-title">One week. One year. One lifetime.</h2>
+      <p class="timeline__note">Your Average Week damage, scaled.</p>
+
+      <div class="timeline__row">
+        <div class="timeline__step">
+          <div class="timeline__bar" style="height:60px"></div>
+          <div class="timeline__num">62</div>
+          <div class="timeline__label">pts / week</div>
+        </div>
+        <div class="timeline__arrow">→</div>
+        <div class="timeline__step">
+          <div class="timeline__bar" style="height:140px"></div>
+          <div class="timeline__num">3,224</div>
+          <div class="timeline__label">pts / year</div>
+        </div>
+        <div class="timeline__arrow">→</div>
+        <div class="timeline__step">
+          <div class="timeline__bar" style="height:260px"></div>
+          <div class="timeline__num">2.3L</div>
+          <div class="timeline__label">pts / lifetime</div>
+        </div>
+      </div>
+      <p class="timeline__caption">The average Indian life &mdash; 72 years &mdash; at today's average week. Behavior change in one direction, over one lifetime, moves this needle.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq__inner">
+      <p class="eyebrow">12 · FREQUENTLY ASKED</p>
+      <h2 class="section-title">You asked. We answered.</h2>
+
+      <details class="faq__item">
+        <summary>Is this scientifically accurate?</summary>
+        <p>Every impact factor is drawn from WWF, FAO, UNEP, IEA, or ICAO reports. We round for readability but didn't invent anything. Full citations in the Sources section.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Do you save my data?</summary>
+        <p>No. Nothing is stored. The receipt is generated client-side and vanishes when you leave the page. Privacy is a feature, not a disclaimer.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Why doesn't the receipt use my actual rupee prices?</summary>
+        <p>Because rupees aren't the point. The receipt measures what rupees never show you &mdash; the environmental cost. That's the whole idea.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Can I share my receipt?</summary>
+        <p>Not yet. A share-image generator is on the roadmap. For now, screenshots work &mdash; the visual design is built to look good in one.</p>
+      </details>
+      <details class="faq__item">
+        <summary>What if I don't know my exact weekly numbers?</summary>
+        <p>Estimate. The point isn't perfect precision &mdash; it's the shape of the week. Even a rough answer reveals the pattern.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Is this a one-time project or ongoing?</summary>
+        <p>Built in 8 hours by TECH SPERTS at a hackathon. If it's picked up by a sustainability org, it becomes a product.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="roadmap">
+    <div class="roadmap__inner">
+      <p class="eyebrow">13 · WHAT'S NEXT</p>
+      <h2 class="section-title">If this scales, these ship next.</h2>
+
+      <div class="roadmap__grid">
+        <div class="roadmap__card">
+          <div class="roadmap__tag">PHASE 01</div>
+          <h3>Weekly history</h3>
+          <p>User accounts to track receipts over weeks. Watch your damage curve change.</p>
+        </div>
+        <div class="roadmap__card">
+          <div class="roadmap__tag">PHASE 02</div>
+          <h3>Share your receipt</h3>
+          <p>One-click share image. Post anonymously. Compare with friends.</p>
+        </div>
+        <div class="roadmap__card">
+          <div class="roadmap__tag">PHASE 03</div>
+          <h3>Swap marketplace</h3>
+          <p>Return Items connects to real secondhand, repair, and refill brands.</p>
+        </div>
+        <div class="roadmap__card">
+          <div class="roadmap__tag">PHASE 04</div>
+          <h3>Localise everything</h3>
+          <p>Geolocation adjusts impact factors for regional water, energy mix, logistics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta__inner">
+      <h2 class="final-cta__title">The planet doesn't send invoices.</h2>
+      <p class="final-cta__sub">So we printed one for you.</p>
+      <a href="#form" class="btn-primary">Print mine now <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">RECEIPT<span class="dot">.</span></div>
+        <div class="footer__by">PRINTED BY <strong>TECH SPERTS</strong></div>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <div class="footer__manifesto">
+        <p>The planet does not send invoices.</p>
+        <p><em>So we printed one for you.</em></p>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <div class="footer__bottom">
+        <div class="footer__col">
+          <span class="footer__label">Addressing</span>
+          <p>UN SDG 12<br />Responsible Consumption<br />&amp; Production</p>
+        </div>
+        <div class="footer__col">
+          <span class="footer__label">Data from</span>
+          <p>WWF · FAO<br />UNEP · IEA · ICAO</p>
+        </div>
+        <div class="footer__col">
+          <span class="footer__label">Stack</span>
+          <p>HTML · CSS<br />Vanilla JS · GSAP</p>
+        </div>
+        <div class="footer__col">
+          <span class="footer__label">Team</span>
+          <p>TECH SPERTS<br />A three-person studio<br />for one weekend only.</p>
+        </div>
+      </div>
+
+      <div class="footer__fine">
+        <span>© RECEIPT CO. · ALL DAMAGES RESERVED.</span>
+        <span>MADE WITH INTENT, NOT A TEMPLATE.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
